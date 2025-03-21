@@ -10,7 +10,11 @@ public class CourseMapper implements RowMapper<Course> {
     public Course mapRow(ResultSet rs, int rowNum) throws SQLException {
         //YOUR CODE STARTS HERE
 
-        return null;
+        Course course = new Course();
+        course.setCourseId(rs.getInt("id"));
+        course.setCourseName(rs.getString("course_name"));
+        course.setCourseDesc(rs.getString("course_desc"));
+        return course;
 
         //YOUR CODE ENDS HERE
     }
