@@ -15,6 +15,10 @@ public class CourseServiceImpl implements CourseServiceInterface {
     @Autowired
     private CourseDao courseDao;
 
+    @Autowired
+    public CourseServiceImpl(CourseDao courseDao) {
+        this.courseDao = courseDao;
+    }
     //YOUR CODE ENDS HERE
 
     public List<Course> getAllCourses() {
@@ -61,7 +65,8 @@ public class CourseServiceImpl implements CourseServiceInterface {
             course.setCourseDesc("IDs do not match, course not updated");
             return course;
         }
-        return courseDao.updateCourse(course);
+        courseDao.updateCourse(course);
+        return course;
 
         //YOUR CODE ENDS HERE
     }

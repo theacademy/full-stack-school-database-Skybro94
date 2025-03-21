@@ -16,6 +16,11 @@ public class TeacherServiceImpl implements TeacherServiceInterface {
     private TeacherDao teacherDao;
     //YOUR CODE ENDS HERE
 
+    @Autowired
+    public TeacherServiceImpl(TeacherDao teacherDao){
+        this.teacherDao=teacherDao;
+    }
+
     public List<Teacher> getAllTeachers() {
         //YOUR CODE STARTS HERE
 
